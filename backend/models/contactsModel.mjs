@@ -1,5 +1,5 @@
-import { run } from ' ./config.mjs'
-import { v4 as uuidv4 } from 'uuid'
+import { run } from '../sql/config.mjs'
+import crypto from 'node:crypto'
 
 export class ContactsModel {
     static async getAllContacts() {
@@ -11,7 +11,7 @@ export class ContactsModel {
     }
 
     static async createContact(contact) {
-        const id = uuidv4()
+        const id = crypto.randomUUID()
         await run.execute(
             `INSERT INTO contacts (_id, name, phone, email, message) VALUES (?, ?, ?, ?)`
             [id, contact.name, contact.phone, contact.email, contact.message]

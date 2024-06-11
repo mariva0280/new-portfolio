@@ -1,4 +1,3 @@
-//import React from 'react'
 import styles from './HomeStyles.module.css'
 import homeImg from '../../assets/me-img.png'
 import sun from '../../assets/sun.svg'
@@ -38,7 +37,7 @@ function Home() {
                 <br />
                 Fernandez
             </h1>
-            <h2>Full stack Developer</h2>
+            <h2>Junior Developer</h2>
             <span>
                 <a href='https://linkedin.com' target='_blank'>
                     <img src={linkedinIcon} alt='Linkedin icon' />
@@ -47,7 +46,7 @@ function Home() {
                     <img src={githubIcon} alt='GitHub Icon' />
                 </a>
             </span>
-            <p className={styles.description}>With a passion for developing modern React web apps for comercial businesses</p>  
+            <p className={styles.description}>With a passion for developing</p>  
             <a href={CV} download>
                 <button className='hover'>Curriculum</button>
             </a>  
