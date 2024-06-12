@@ -59,6 +59,26 @@ input[type='submit']:active {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25) ;
 }
 
+.error {
+    color: var(--error-color);
+    font-size: 16px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.success {
+    color: var(--success-color);
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media (width >= 800px) {
     textarea, input:not([type='submit']) {
         width: 600px;
@@ -68,7 +88,6 @@ input[type='submit']:active {
     form {
         gap: 40px;
     }
-
 }
 
 @media (width >= 1400px) {

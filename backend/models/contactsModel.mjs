@@ -3,7 +3,14 @@ import crypto from 'node:crypto'
 
 export class ContactsModel {
     static async getAllContacts() {
-        return run.execute(`SELECT * FROM contacts`)
+        const result = await run.execute(`SELECT * FROM contacts`)
+        return result.rows.map(row => ({
+            id: row._id,
+            name: row.name,
+            phone: row.phone,
+            email: row.email,
+            message: row.message
+        }))
     }
 
     static async getContactById(id) {

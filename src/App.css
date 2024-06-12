@@ -6,6 +6,8 @@
     --text-color: #222;
     --form-text-color: #555;
     --footer-text-color: #888;
+    --error-color: #222;
+    --success-color: #222;
 }
 
 [data-theme='dark'] {
@@ -16,6 +18,8 @@
     --text-color: #fff;
     --form-text-color: #fff;
     --footer-text-color: #bbb;
+    --error-color: #fff;
+    --success-color: #fff;
 }
 
 body {
