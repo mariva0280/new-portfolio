@@ -41,3 +41,30 @@ export const validateContact = (req, res, next) => {
 
     next()
 }
+
+// validation/contactsValidation.mjs
+
+export const validatePartialContact = (req, res, next) => {
+    const { name, phone } = req.body;
+    const errors = [];
+
+    if (name !== undefined) {
+        const namePattern = /^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s]+$/;
+        if (!namePattern.test(name)) {
+            errors.push({ code: 'BADR-006', message: 'El formato del nombre es inválido', field: 'name' });
+        }
+    }
+
+    if (phone !== undefined) {
+        const phonePattern = /^[0-9]{1,12}$/;
+        if (!phonePattern.test(phone)) {
+            errors.push({ code: 'BADR-004', message: 'El formato del teléfono es inválido', field: 'phone' });
+        }
+    }
+
+    if (errors.length > 0) {
+        return res.status(400).json({ errors });
+    }
+
+    next();
+}

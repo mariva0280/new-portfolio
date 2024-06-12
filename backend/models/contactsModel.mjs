@@ -1,32 +1,89 @@
-import { run } from '../sql/config.mjs'
+import connection from '../sql/config.mjs'
 import crypto from 'node:crypto'
 
 export class ContactsModel {
     static async getAllContacts() {
-        const result = await run.execute(`SELECT * FROM contacts`)
-        return result.rows.map(row => ({
-            id: row._id,
-            name: row.name,
-            phone: row.phone,
-            email: row.email,
-            message: row.message
-        }))
+        try {
+            const [rows] = await connection.query (`SELECT * FROM contacts`)
+            return rows.map(row => ({
+                id: row.id,
+                name: row.name,
+                phone: row.phone,
+                email: row.email,
+                message: row.message
+            }))    
+            
+        } catch (error) {
+            console.error('Error in getAllContacts:', error)
+            throw error
+        }    
     }
 
     static async getContactById(id) {
-        return run.execute(`SELECT * FROM contacts WHERE _id = ?`, [id])
+        try {
+            const [rows] = await connection.query(`SELECT * FROM contacts WHERE id = ?`, [id])
+            if(rows.length === 0) {
+                throw new Error('Contact not found')
+            }
+            const row = rows[0]
+            return {
+                id: row.id,
+                name: row.name,
+                phone: row.phone,
+                email: row.email,
+                message: row.message
+            }
+        } catch (error) {
+            console.error('Error in getContactById:', error)
+            throw error
+        }    
     }
 
     static async createContact(contact) {
-        const id = crypto.randomUUID()
-        await run.execute(
-            `INSERT INTO contacts (_id, name, phone, email, message) VALUES (?, ?, ?, ?)`
-            [id, contact.name, contact.phone, contact.email, contact.message]
-        )
-        return { id, ...contact }
+        try {
+            const id = crypto.randomUUID()
+            await connection.query(
+                `INSERT INTO contacts (id, name, phone, email, message) VALUES (?, ?, ?, ?, ?)`,
+                [id, contact.name, contact.phone, contact.email, contact.message]
+            )
+            return { id, ...contact }
+        } catch (error) {
+            console.error('Error in createContact:', error)
+            throw error
+        }    
+    }
+
+    static async updateContactById(id, updates) {
+        try {
+            const fields = []
+            const values = []
+            if(updates.name !== undefined) {
+                fields.push('name = ?')
+                values.push(updates.name)
+            }
+            if(updates.phone !== undefined) {
+                fields.push('phone = ?')
+                values.push(updates.phone)
+            }
+            values.push(id)
+            const [result] = await connection.query(
+                `UPDATE contacts SET ${fields.join(', ')} WHERE id = ?`, values)
+            if(result.affectedRows === 0) {
+                return null
+            }
+            return this.getContactById(id)
+        } catch (error) {
+            console.error('Error in updateContactById:', error)
+            throw error
+        }    
     }
 
     static async deleteById(id) {
-        await run.execute(`DELETE FROM contacts WHERE _id = ?` [id])
+        try {
+            await connection.query(`DELETE FROM contacts WHERE id = ?`, [id])
+        } catch (error) {
+            console.error('Error in deleteById:', error)
+            throw error
+        }    
     }
 }

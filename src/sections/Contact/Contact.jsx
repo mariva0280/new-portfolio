@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './ContactStyles.module.css';
+import { createContact } from '../../api'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -18,7 +19,7 @@ function Contact() {
     setErrors({ ...errors, [name]: [] })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const newErrors = {}
 
@@ -56,18 +57,23 @@ function Contact() {
 
     // Si no hay errores, enviar el formulario
     if (Object.values(newErrors).every((errorArray) => errorArray.length === 0)) {
-      console.log('Formulario enviado')
-      setSuccessMessage('Formulario enviado correctamente')
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        message: ''
-      })
+      try {
+        await createContact(formData)
+        setSuccessMessage('Formulario enviado correctamente')
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          message: ''
+        })
 
-      setTimeout(() => {
-        setSuccessMessage('')
-      }, 5000)
+        setTimeout(() => {
+          setSuccessMessage('')
+        }, 5000)
+      }catch (error) {
+        console.error('Error al enviar el formulario', error)
+        setErrors({ form: ['Error al enviar el formulario'] })
+      }  
     }
   }
 

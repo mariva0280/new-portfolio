@@ -1,5 +1,4 @@
 import { ContactsModel } from '../models/contactsModel.mjs'
-import { validateContact } from '../validation/contactsValidation.mjs'
 
 export class ContactsController {
     static async getAllContacts(req, res) {
@@ -33,17 +32,35 @@ export class ContactsController {
     }
 
     static async createContact(req, res) {
-        const errors = validateContact(req.body)
-        if(errors.length > 0) {
-            return res.status(400).json({errors})
-        }
-
         try {
             const newContact = await ContactsModel.createContact(req.body)
             res.status(201).json(newContact)
         } catch (error) {
             res.status(500).json({
                 errors :[{ code: 'SERVER-500', message: 'Internal server error', field: null}]
+            })
+        }
+    }
+
+    static async updateContactById(req, res) {
+        try {
+            const { id } = req.params
+            const { name, phone } = req.body
+
+            
+            const updateContact = await ContactsModel.updateContactById(id, {name, phone})
+            if(updateContact) {
+                res.status(200).json(updateContact)
+            } else {
+                res.status(404).json({
+                    errors: [{ code: 'NOTF-404', message: 'Recurso no encontrado', field: null}]
+                })
+            }
+            
+           
+        } catch (error) {
+            res.status(500).json({
+                errors: [{code: 'SERVER-500', message: 'Internal server error', field: null}]
             })
         }
     }
