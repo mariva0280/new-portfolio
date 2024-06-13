@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:frontend": "vite build",
-    "build:backend": "concurrently \"cd backend && node server.mjs\""
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "build:backend": "npm install && npm run build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.6.0",
@@ -16,7 +17,6 @@
     "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "formik": "^2.4.6",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
     "mysql2": "^3.10.0",
@@ -26,8 +26,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.5",
     "react-router-dom": "^6.23.1",
-    "yup": "^1.4.0",
-    "zod": "^3.23.8"
+    "serverless-http": "^2.7.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
