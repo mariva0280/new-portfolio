@@ -12,25 +12,5 @@ export const createContact = async (contact) => {
         console.error('Error creating contact', error)
         throw error
     }   
-};
-
-/*export const getContacts = async () => {
-    const response = await axios.get(`${API_URL}/contacts`);
-    return response.data;
-};
-
-export const getContactById = async (id) => {
-    const response = await axios.get(`${API_URL}/contacts/${id}`);
-    return response.data;
-};
-
-export const updateContactById = async (id, updates) => {
-    const response = await axios.patch(`${API_URL}/contacts/${id}`, updates);
-    return response.data;
-};
-
-export const deleteContactById = async (id) => {
-    const response = await axios.delete(`${API_URL}/contacts/${id}`);
-    return response.data;
-};*/
+}
 

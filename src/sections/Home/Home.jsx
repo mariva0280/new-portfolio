@@ -48,7 +48,9 @@ function Home() {
                     <img src={githubIcon} alt='GitHub Icon' />
                 </a>
             </span>
-            <p className={styles.description}>With a passion for developing</p>  
+            <p className={styles.description}>
+                With a passion for developing
+            </p>  
             <a href={CV} download>
                 <button className='hover'>Download CV</button>
             </a>  

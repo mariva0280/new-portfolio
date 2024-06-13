@@ -1,3 +1,8 @@
+/*
+debería poner las validaciones aquí en los métodos createContact y update, pero para que sea
+funcional porque no conseguía que funcionara al final las tengo en routes, con más tiempo lo modificaré
+*/
+
 import { ContactsModel } from '../models/contactsModel.mjs'
 
 export class ContactsController {
