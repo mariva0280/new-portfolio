@@ -1,0 +1,120 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 210mm; /* A4 ancho */
+    height: 297mm; /* A4 alto */
+    padding: 15mm; /* padding para imprimir */
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #cccccc; 
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.header .picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #666;
+}
+
+.header .summary {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; 
+}
+
+.left-column, .right-column {
+    width: 48%;
+}
+
+.left-column h3, .right-column h3 {
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.left-column ul, .right-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.left-column ul li, .right-column ul li {
+    margin-bottom: 20px; /* aumenta espacio entre elementos */
+}
+
+.personal-info li, .links li {
+    display: flex;
+    align-items: center;
+}
+
+.personal-info li i, .links li i {
+    margin-right: 10px;
+}
+
+.right-column ul li {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-column ul li div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 5px; /* añadir margen entre columnas */
+}
+
+.right-column ul li strong {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.right-column ul li p {
+    margin: 2px 0;
+}
+
+.right-column ul li p:first-of-type {
+    margin-right: 10px;
+}
+
+
+

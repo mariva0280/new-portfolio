@@ -9,12 +9,14 @@ import githubDark from '../../assets/github-dark.svg'
 import CV from '../../assets/cv.pdf'
 import { useTheme } from '../../common/ThemeContext'
 
+
 function Home() {
   const { theme, toggleTheme } = useTheme()
 
   const themeIcon = theme === 'light' ? sun : moon
   const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark
   const githubIcon = theme === 'light' ? githubLight : githubDark 
+
     
   return (
     <section id="home" className={styles.container}>
