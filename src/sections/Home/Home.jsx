@@ -50,7 +50,7 @@ function Home() {
             </span>
             <p className={styles.description}>With a passion for developing</p>  
             <a href={CV} download>
-                <button className='hover'>Curriculum</button>
+                <button className='hover'>Download CV</button>
             </a>  
         </div>
 
