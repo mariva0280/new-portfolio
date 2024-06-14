@@ -2,16 +2,17 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.mjs",
+      "src": "backend/server.mjs",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/"
+      "src": "/api/(.*)",
+      "dest": "/backend/server.mjs"
     }
   ]
 }
+
 
   
