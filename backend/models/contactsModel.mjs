@@ -45,8 +45,17 @@ export class ContactsModel {
                { sql: `INSERT INTO contact (id, name, phone, email, message) VALUES (gen_random_uuid (), ?, ?, ?, ?)`,
                  args: [contact.name, contact.phone, contact.email, contact.message]}
             )
-            console.log(result)
-            return result
+           
+            const lastinsertedId = result.lastInsertRowid
+            const { rows }= await connection.execute(
+                {
+                    sql:`SELECT * FROM contact WHERE ROWID = ?`,
+                    args: [lastinsertedId]
+                }
+            )
+            const newContact = rows[0]
+            return newContact
+            
         } catch (error) {
             //console.error('Error in createContact:', error)
             throw error
@@ -82,7 +91,7 @@ export class ContactsModel {
         try {
             await connection.execute({sql:`DELETE FROM contact WHERE id = ?`, args: [id]})
         } catch (error) {
-            console.error('Error in deleteById:', error)
+            //console.error('Error in deleteById:', error)
             throw error
         }    
     }
