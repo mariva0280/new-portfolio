@@ -1,25 +1,17 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "src/**/*",
-        "use": "@vercel/static-build",
-        "config": { "distDir": "public" }
-      },
-      {
-        "src": "backend/server.mjs",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "/backend/server.mjs"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/src/index.html"
-      }
-    ]
-  }
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/server.mjs",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/backend/server.mjs"
+    }
+  ]
+}
+
   
