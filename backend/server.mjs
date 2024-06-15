@@ -5,9 +5,7 @@ import router from './routes/contactsRoutes.mjs'
 const app = express()
 const PORT = process.env.PORT || 5000
 
-app.use(cors({
-    origin: 'https://vanessa-fernandez-portfolio.vercel.app'
-}))
+app.use(cors())
 
 app.use(express.json())
 
