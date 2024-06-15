@@ -1,27 +1,43 @@
-# React + Vite
+# New Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación web de portafolio personal que permite a los usuarios mostrar sus habilidades, proyectos y proporcionar una manera de contactarse. La aplicación está compuesta por un frontend desarrollado en React y un backend en Node.js con Express. El backend se conecta a una base de datos alojada en Turso para almacenar y gestionar los datos de contacto.
 
-Currently, two official plugins are available:
+## Tecnologías Usadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Frontend
+- **React**: Biblioteca de JavaScript para construir interfaces de usuario.
+- **React Router**: Manejo de la navegación entre diferentes componentes.
+- **Axios**: Para realizar solicitudes HTTP al backend.
+- **HTML/CSS**: Para el diseño y la estructura de la página web.
 
+### Backend
+- **Node.js**: Entorno de ejecución para JavaScript en el servidor.
+- **Express**: Framework para construir aplicaciones web y API.
+- **Axios**: Para realizar solicitudes HTTP al backend.
+- **CORS**: Middleware para permitir solicitudes entre diferentes orígenes.
+- **MySQL**: Base de datos relacional para almacenar datos de contacto.
 
-<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+## Descripción del Proyecto
+
+### Frontend
+
+El frontend está desarrollado con React, utilizando componentes funcionales y hooks. La aplicación es de una sola página (SPA) y permite navegar entre diferentes secciones como Home, Projects, Skills y Contact. También incluye un tema oscuro/ligero que se puede alternar mediante un botón.
+
+### Backend
+
+El backend está construido con Node.js y Express. Proporciona una API RESTful para gestionar los datos de contacto. Incluye las siguientes funcionalidades:
+
+- Obtener todos los contactos.
+- Obtener un contacto por ID.
+- Crear un nuevo contacto.
+- Actualizar un contacto existente.
+- Eliminar un contacto por ID.
+
+### Base de Datos
+
+La base de datos utilizada es MySQL, donde se almacenan los datos de contacto. La conexión a la base de datos está configurada utilizando la biblioteca `mysql2`.
+
+### Despliegue
+
+El proyecto está desplegado tanto el backend como el frontend en Vercel.
+
