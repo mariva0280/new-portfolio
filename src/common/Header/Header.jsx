@@ -8,78 +8,70 @@ import styles from './HeaderStyles.module.css'
 function Header() {
   const { theme, toggleTheme } = useTheme()
   const location = useLocation()
-  const themeIcon = theme === 'light' ? sun : moon
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const navArrowStyle = {
-    color: theme === 'light' ? 'var(--text-color)' : 'white',
-    cursor: 'pointer' 
-  }
-
-  const toggleMenu = () => {
+  const toggleMenu =()=> {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const getNextPath = () => {
+  const getNextPath =()=> {
     switch (location.pathname) {
       case '/':
-        return '/projects'
-      case '/projects':
-        return '/skills'
+        return { path: '/projects', name: 'Projects'}
+      case'/projects':
+        return { path: '/skills', name: 'Skills'}
       case '/skills':
-        return '/contact'
+        return { path: '/contact', name: 'Contact'}
       case '/contact':
-        return '/'
+        return { path: '/', name: 'Home'}      
       default:
-        return '/'
+        return { path: '/', name: 'Home'}
     }
   }
 
-  const getPrevPath = () => {
+  const getPrevPath=()=> {
     switch (location.pathname) {
       case '/':
-        return '/contact'
+        return { path: '/contact', name: 'Contact'}
       case '/projects':
-        return '/'
+        return { path: '/', name: 'Home'}
       case '/skills':
-        return '/projects'
+        return { path: '/projects', name: 'Projects'}
       case '/contact':
-        return '/skills'
+        return { path: '/skills', name: 'Skills'}
       default:
-        return '/'
+        return { path: '/', name: 'Home'}   
     }
   }
+
+  const next = getNextPath()
+  const prev = getPrevPath()
 
   return (
-    <section id="header" className={styles.container}>
-      <Link to={getPrevPath()} className={`${styles.navArrow} ${styles.prev}`} style={navArrowStyle}>
-        {'<'}
-        <span className={styles.navText}>Go Back</span>
+    <section id='header' className={styles.container}>
+      <Link to={prev.path} className={`${styles.navLink} ${styles.prev}`}>
+        {prev.name}
       </Link>
       <div className={styles.nav}>
         <button className={styles.themeToggle} onClick={toggleTheme}>
-          <img src={themeIcon} alt="Toggle theme" />
+          <img src={theme === 'light' ? sun : moon} alt='Toogle theme'/>
         </button>
-        <button
-          className={styles.menuToggle}
-          onClick={toggleMenu}
-          style={{ color: theme === 'light' ? 'var(--text-color)' : 'white' }}
-        >
-          &#9776;
+        <button className={styles.menuToggle} onClick={toggleMenu}>
+          <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
         </button>
         <div className={`${styles.menu} ${isMenuOpen ? styles.showMenu : ''}`}>
-          <Link to="/" onClick={toggleMenu}>Home</Link>
-          <Link to="/projects" onClick={toggleMenu}>Projects</Link>
-          <Link to="/skills" onClick={toggleMenu}>Skills</Link>
-          <Link to="/contact" onClick={toggleMenu}>Contact</Link>
+          <Link to='/' onClick={toggleMenu}>Home</Link>
+          <Link to='/projects' onClick={toggleMenu}>Projects</Link>
+          <Link to='/skills' onClick={toggleMenu}>Skills</Link>
+          <Link to='/contact' onClick={toggleMenu}>Contact</Link>
         </div>
       </div>
-      <Link to={getNextPath()} className={`${styles.navArrow} ${styles.next}`} style={navArrowStyle}>
-        {'>'}
-        <span className={styles.navText}>Next Section</span>
+      <Link to={next.path} className={`${styles.navLink} ${styles.next}`}>
+        {next.name}
       </Link>
-    </section>
-  );
+    </section>        
+  )
+
 }
 
 export default Header
