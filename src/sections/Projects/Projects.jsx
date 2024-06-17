@@ -1,11 +1,10 @@
-
 import styles from './ProjectsStyles.module.css'
 import hospital from '../../assets/hospital.png'
 import car from '../../assets/concesionario.png'
 import game from '../../assets/juego.png'
 import guess from '../../assets/invitados.png'
 import api from '../../assets/openapi.png'
-import ProjectCard from '../../common/ProjectCard'
+import ProjectCard from './ProjectCard'
 
 function Projects() {    
   return (

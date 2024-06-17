@@ -1,20 +1,24 @@
-
+import { Outlet } from 'react-router-dom'
+import Header from './common/Header/Header'
+import Footer from './common/Footer/Footer'
+import { ThemeProvider } from './common/ThemeContext'
 import './App.css'
-import Home from './sections/Home/Home'
-import Projects from './sections/Projects/Projects'
-import Skills from './sections/Skills/Skills'
-import Contact from './sections/Contact/Contact'
-import Footer from './sections/Footer/Footer'
+
 
 function App() {
 
   return (
     <>
-     <Home />
-     <Projects />
-     <Skills />
-     <Contact />
-     <Footer />
+     <ThemeProvider>
+        <div className='wrapper-main'>
+          <Header />
+          <main>
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
+     </ThemeProvider>
+     
     </>
   )
 }

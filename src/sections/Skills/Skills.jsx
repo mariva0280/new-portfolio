@@ -1,7 +1,7 @@
 import styles from './SkillsStyles.module.css'
 import checkDark from '../../assets/checkmark-dark.svg'
 import checkLigth from '../../assets/checkmark-light.svg'
-import SkillList from '../../common/SkillList'
+import SkillList from './SkillList'
 import { useTheme } from '../../common/ThemeContext'
 
 function Skills() {

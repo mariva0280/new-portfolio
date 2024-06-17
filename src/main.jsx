@@ -1,14 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import { ThemeProvider } from './common/ThemeContext.jsx'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <ThemeProvider>
-        <App />
-    </ThemeProvider>
-   
-  </React.StrictMode>
+import { createRoot } from "react-dom/client"
+import { RouterProvider } from "react-router-dom"
+import router from './routers'
+
+const rootEle = document.getElementById('app')
+const root = createRoot(rootEle)
+
+root.render(
+  <RouterProvider router={router}/>
 )
