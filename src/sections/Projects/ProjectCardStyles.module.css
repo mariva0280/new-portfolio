@@ -1,0 +1,89 @@
+.projectCard {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  
+  .even {
+    flex-direction: row;
+  }
+  
+  .odd {
+    flex-direction: row-reverse;
+  }
+  
+  .imageWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    text-decoration: none; 
+  }
+  
+  .projectImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  .projectImage:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .projectDetails {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  .projectTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .shortDescription {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .summary {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .projectCard {
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+  
+    .even, .odd {
+      flex-direction: column;
+    }
+  
+    .imageWrapper {
+      margin: 0;
+    }
+  
+    .projectImage {
+      width: 80%; 
+      margin-bottom: 1rem;
+    }
+  
+    .projectDetails {
+      text-align: center;
+    }
+  }
+  
+  
+  
+  
+  
+  
