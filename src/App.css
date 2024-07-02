@@ -62,6 +62,20 @@ p {
     font-size: 16px;
     font-weight: 300;
 }
+.wrapper-main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    flex: 1;
+    margin-top: 80px;
+}
+footer {
+    background-color: var(--background-color);
+    padding: 1rem;
+    text-align: center;
+}
 
 .sectionTitle {
     margin-bottom: 30px;
