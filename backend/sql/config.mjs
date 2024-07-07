@@ -1,9 +1,9 @@
-/* eslint-disable no-undef */
 import 'dotenv/config'
 import { createClient } from "@libsql/client";
 
 const connection = createClient({
   url:"libsql://contactform-vanessa.turso.io",
+  // eslint-disable-next-line no-undef
   authToken: process.env.TURSO_TOKEN_BD,
 })
 
