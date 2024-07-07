@@ -3,6 +3,7 @@ import cors from 'cors'
 import router from './routes/contactsRoutes.mjs'
 
 const app = express()
+// eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 5000
 
 app.use(cors())
