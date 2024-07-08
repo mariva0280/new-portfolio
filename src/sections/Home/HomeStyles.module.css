@@ -4,8 +4,10 @@
     padding: 2rem 1rem;
     align-items: center;
     text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
+    gap: 2rem;
+    /*margin-top: 2rem;
+    margin-bottom: 2rem;*/
   
     img {
       max-width: 100%;
@@ -64,8 +66,12 @@
   }
   
   .description {
-    max-width: 240ch;
+    max-width: 60ch;
     align-self: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
   }
   
   .info {
@@ -87,6 +93,7 @@
       flex-direction: row-reverse;
       align-items: center;
       justify-content: space-evenly;
+      gap:4rem;
     }
   
     .hero {

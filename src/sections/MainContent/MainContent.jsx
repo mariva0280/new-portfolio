@@ -3,7 +3,6 @@ import Home from '../Home/Home'
 import Skills from "../Skills/Skills"
 import Projects from "../Projects/Projects"
 import Contact from "../Contact/Contact"
-//import { Link } from 'react-router-dom'
 import './MainContentStyles.modules.css'
 
 function MainContent() {

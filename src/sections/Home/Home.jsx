@@ -40,7 +40,7 @@ function Home() {
                 </a>
             </span>
             <p className={styles.description}>
-                With a passion for developing
+                I am a professional with extensive experience in various sectors, now focused on programming. Passionate about technology and problem-solving, I am continuously learning to enhance my skills as a developer. My background in management and my ability to work in a team help me tackle new challenges in the IT world.
             </p>  
             <a href={CV} download>
                 <button className='hover'>Download CV</button>
