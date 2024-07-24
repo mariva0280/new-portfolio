@@ -1,5 +1,4 @@
-//import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useState } from 'react'
 import { useTheme } from '../ThemeContext'
 import sun from '../../assets/sun.svg'
 import moon from '../../assets/moon.svg'
@@ -7,27 +6,40 @@ import styles from './HeaderStyles.module.css'
 
 function Header() {
   const { theme, toggleTheme } = useTheme()
-  const location = useLocation()
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const getNextPath =()=> {
-    if(location.pathname === '/projects') {
-      return { path: '/', name: 'Home'}
-    } else {
-      return { path: '/projects', name: 'Projects'}
-    }
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
   }
-  const next = getNextPath()
+
+  const handleMenuItemClick = () => {
+    setIsMenuOpen(false)
+  }
 
   return (
     <section id='header' className={styles.container}>
       <div className={styles.nav}>
+        <ul className={`${styles.menu} ${isMenuOpen ? styles.     showMenu   : ''}`}>
+          <li>
+            <a href="#home" className= {styles.navLink} onClick={handleMenuItemClick}>About me</a>
+          </li>
+          <li>
+            <a href="#skills" className= {styles.navLink} onClick={handleMenuItemClick}>Skills</a>
+          </li>
+          <li>
+            <a href="#projects" className= {styles.navLink} onClick={handleMenuItemClick}>Projects</a>
+          </li>
+          <li>
+            <a href="#contact" className= {styles.navLink} onClick={handleMenuItemClick}>Contact</a>
+          </li>
+        </ul>
         <button className={styles.themeToggle} onClick={toggleTheme}>
           <img src={theme === 'light' ? sun : moon} alt='Toogle theme'/>
         </button>
-      </div>
-      <Link to={next.path} className={`${styles.navLink} ${styles.next}`}>
-        {next.name}
-      </Link>
+        <div className={styles.navToggle} onClick={toggleMenu}>
+          <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+        </div>
+      </div>  
     </section>        
   )
 

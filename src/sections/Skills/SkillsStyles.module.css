@@ -4,6 +4,7 @@
     text-align: center;
     margin: 2rem 1rem;
 
+
     span {
         display: flex;
         align-items: center;
@@ -21,7 +22,7 @@
     align-self: center;
     flex-wrap: wrap;
     row-gap: 40px;
-    max-width: 26ch;
+    max-width: auto;
 }
 
 hr {

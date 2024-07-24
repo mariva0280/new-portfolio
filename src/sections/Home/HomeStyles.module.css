@@ -6,8 +6,10 @@
     text-align: center;
     margin: 2rem 0;
     gap: 2rem;
-    /*margin-top: 2rem;
-    margin-bottom: 2rem;*/
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    max-width: 1024px;
+    margin: 0px auto;
   
     img {
       max-width: 100%;
@@ -33,7 +35,7 @@
       margin-top: 20px;
       border: none;
       border-radius: 20px;
-      width: 126px;
+      width: auto;
       height: 50px;
       font-size: 20px;
       font-weight: bold;
@@ -71,7 +73,8 @@
     margin-top: 1rem;
     font-size: 1rem;
     line-height: 1.5;
-    text-align: justify;
+    text-align: center;
+    font-size: 20px;
   }
   
   .info {

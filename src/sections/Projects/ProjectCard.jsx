@@ -23,7 +23,6 @@ ProjectCard.propTypes = {
     shortDescription: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
     isEven: PropTypes.bool.isRequired,
-
 }
 
 

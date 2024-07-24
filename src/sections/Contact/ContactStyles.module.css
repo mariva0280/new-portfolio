@@ -3,6 +3,9 @@
     flex-direction: column;
     text-align: center;
     margin: 2rem 1rem ;
+    max-width: 1024px;
+    margin: 0px auto;
+    
 }
 
 form {
@@ -48,6 +51,7 @@ input[type='submit'] {
     font-weight: bold;
     transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
     margin: auto;
+    margin-bottom: 50px;
 }
 
 input[type='submit']:hover {

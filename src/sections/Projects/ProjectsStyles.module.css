@@ -5,6 +5,8 @@
     align-items: center;
     margin: 2rem 1 rem;
     margin-bottom: 4rem;
+    max-width: 1024px;
+    margin: 0px auto;
 }
 
 .sectionTitle {

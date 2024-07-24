@@ -1,6 +1,6 @@
-import { Outlet } from 'react-router-dom'
 import Header from './common/Header/Header'
 import Footer from './common/Footer/Footer'
+import MainContent from './sections/MainContent/MainContent'
 import { ThemeProvider } from './common/ThemeContext'
 import './App.css'
 
@@ -13,7 +13,7 @@ function App() {
         <div className='wrapper-main'>
           <Header />
           <main>
-            <Outlet />
+            <MainContent />
           </main>
           <Footer />
         </div>
