@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanessa Fernández - Full Stack Developer Resume (ATS)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 0;
+            font-size: 11.5px;
+            line-height: 1.35;
+        }
+
+        #cv {
+            padding: 0;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            margin-top: 12px;
+            margin-bottom: 6px;
+        }
+
+        h1 {
+            font-size: 18px;
+        }
+
+        h2 {
+            font-size: 14px;
+        }
+
+        h3 {
+            font-size: 13px;
+            margin: 10px 0 4px 0;
+        }
+
+        ul {
+            padding-left: 18px;
+            margin: 4px 0;
+        }
+
+        p {
+            margin: 2px 0;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cv">
+        <h1>Vanessa Fernández</h1>
+        <p>45690 La Pueblanueva, Toledo (Spain)</p>
+        <p>Phone: +34 615 51 85 29 | Email: marivafp@gmail.com</p>
+        <p>LinkedIn: https://linkedin.com/in/vanessa-fernandez</p>
+        <p>GitHub: https://github.com/mariva0280</p>
+        <p>Portfolio: https://vanessa-fernandez-portfolio.vercel.app</p>
+
+        <h2>Professional Summary</h2>
+        <p>
+            Junior Full Stack Developer with strong training in frontend and backend technologies. Experience building
+            RESTful APIs and full stack applications using the MERN stack. Proactive, fast learner and
+            solution-oriented. Looking to join an Agile team to grow and contribute to impactful projects.
+        </p>
+
+        <h2>Technical Skills</h2>
+        <ul>
+            <li>HTML5, CSS3, JavaScript, React, Tailwind CSS, Responsive Design</li>
+            <li>Node.js, Java, Spring Boot, Express.js, RESTful APIs</li>
+            <li>MongoDB, MySQL, CRUD operations, SQL basics</li>
+            <li>Git, GitHub, Postman, API Designer, Apigee, Mulesoft</li>
+            <li>Agile/Scrum methodologies, basic testing, debugging</li>
+        </ul>
+
+        <h2>Professional Experience</h2>
+        <h3>Small Business Owner – Self-employed</h3>
+        <p>Feb 2006 – Present</p>
+        <p>
+            Full management of a small fruit and vegetable business. Created an internal digital system for product
+            traceability (inventory, lot tracking). Developed strong skills in customer service, operations, and
+            problem-solving.
+        </p>
+
+        <h3>Sales Assistant – Isabel Morgado</h3>
+        <p>Oct 2020 – Mar 2024</p>
+        <p>
+            Provided high-quality customer service and sales support. Managed client inquiries and ensured satisfaction.
+        </p>
+
+        <h3>Administrative Assistant – Integraciones Manchegas</h3>
+        <p>Jan 2002 – Jan 2006</p>
+        <p>
+            Managed administrative tasks: billing, accounting, logistics scheduling. Supported internal management
+            system development.
+        </p>
+
+        <h2>Technical Education</h2>
+        <h3>Full Stack MERN Bootcamp – Fundación Eurofirms (Online)</h3>
+        <p>Feb 2025 – Jul 2025</p>
+        <p>
+            Built full stack web applications using the MERN stack (MongoDB, Express.js, React, Node.js). Worked on
+            CRUD, authentication, protected routes. Collaborated
+            with Git in Agile teams.
+        </p>
+
+        <h3>Full Stack & API Bootcamp – Rural Hack (Online)</h3>
+        <p>Feb 2024 – Jun 2024</p>
+        <p>
+            Frontend: HTML, CSS, JavaScript, React, Redux, Next.js. Backend with Node.js and Express. API design and
+            testing with Apigee and Mulesoft. API consumption and deployment using Vercel/Render. SQL and NoSQL databases.
+        </p>
+
+        <h3>Java Backend Course – Francisco J. Raya Márquez</h3>
+        <p>Jan 2023 – Dec 2023</p>
+        <p>
+            Java fundamentals, OOP, API development with Spring Boot.
+        </p>
+
+        <h3>Frontend Bootcamp – Bottega (Online)</h3>
+        <p>Mar 2020 – Sep 2020</p>
+
+        <h2>Academic Background</h2>
+        <p>Executive Secretarial Studies – Academia San Miguel | 1999–2001</p>
+        <p>High School – IES Padre Juan de Mariana | 1994–1999</p>
+
+        <h2>Languages</h2>
+        <ul>
+            <li>Spanish – Native</li>
+            <li>English – B2 Level</li>
+        </ul>
+    </div>
+
+    <button id="download-pdf" type="button">Download PDF</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('download-pdf').addEventListener('click', function () {
+                var element = document.getElementById('cv');
+                html2pdf().from(element).set({
+                    margin: [10, 8, 10, 8],
+                    filename: 'Vanessa_Fernandez_Resume.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 1.6 },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                }).save();
+            });
+        });
+    </script>
+</body>
+
+</html>
