@@ -3,6 +3,7 @@ import car from '../../assets/concesionario.png'
 import game from '../../assets/juego.png'
 import guess from '../../assets/invitados.png'
 import api from '../../assets/openapi.png'
+import gym from '../../assets/gym_app.jpg'
 
 const projectData = [
   {
@@ -48,6 +49,15 @@ const projectData = [
     summary: 'Un juego cláciso tuneado, es un arkanoid con estilo propio, implementado puramente en Javascript, un reto todo el proyecto.',
     image: game,
     githubLink: 'https://github.com/mariva0280/juegoArkanoid',
+    showInMain: false
+  },
+  {
+    id: 6,
+    title: 'GymPlan',
+    shortDescription: 'App de rutinas personalizadas de entrenamiento',
+    summary: 'Aplicación full stack para la gestión personalizada de entrenamientos. Incluye una vista de usuario donde se visualizan las rutinas por día, y una vista de administrador para crear y asignar entrenamientos según el usuario y la semana. En futuras versiones se planea integrar inteligencia artificial para adaptar las rutinas de forma más precisa a cada persona.',
+    image: gym,
+    githubLink: 'https://github.com/mariva0280/eurofirms-bootcamp-202502/tree/feature/project',
     showInMain: false
   }
 ]

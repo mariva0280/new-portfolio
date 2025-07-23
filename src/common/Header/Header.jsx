@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { useTheme } from '../ThemeContext'
 import sun from '../../assets/sun.svg'
 import moon from '../../assets/moon.svg'
@@ -22,16 +21,16 @@ function Header() {
       <div className={styles.nav}>
         <ul className={`${styles.menu} ${isMenuOpen ? styles.     showMenu   : ''}`}>
           <li>
-            <Link to="/" className= {styles.navLink} onClick={handleMenuItemClick}>About me</Link>
+            <a href="#home" className= {styles.navLink} onClick={handleMenuItemClick}>About me</a>
           </li>
           <li>
-            <Link to="#skills" className= {styles.navLink} onClick={handleMenuItemClick}>Skills</Link>
+            <a href="#skills" className= {styles.navLink} onClick={handleMenuItemClick}>Skills</a>
           </li>
           <li>
-            <Link to="#projects" className= {styles.navLink} onClick={handleMenuItemClick}>Projects</Link>
+            <a href="#projects" className= {styles.navLink} onClick={handleMenuItemClick}>Projects</a>
           </li>
           <li>
-            <Link to="#contact" className= {styles.navLink} onClick={handleMenuItemClick}>Contact</Link>
+            <a href="#contact" className= {styles.navLink} onClick={handleMenuItemClick}>Contact</a>
           </li>
         </ul>
         <button className={styles.themeToggle} onClick={toggleTheme}>
