@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useTheme } from '../ThemeContext'
+import useNavigateAndScroll from '../../hooks/useNavigateAndScroll'
 import sun from '../../assets/sun.svg'
 import moon from '../../assets/moon.svg'
 import styles from './HeaderStyles.module.css'
@@ -7,12 +8,14 @@ import styles from './HeaderStyles.module.css'
 function Header() {
   const { theme, toggleTheme } = useTheme()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const scrollToSection = useNavigateAndScroll()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const handleMenuItemClick = () => {
+  const handleMenuItemClick = (section) => {
+    scrollToSection(section)
     setIsMenuOpen(false)
   }
 
@@ -21,16 +24,16 @@ function Header() {
       <div className={styles.nav}>
         <ul className={`${styles.menu} ${isMenuOpen ? styles.     showMenu   : ''}`}>
           <li>
-            <a href="#home" className= {styles.navLink} onClick={handleMenuItemClick}>About me</a>
+            <button className= {styles.navLink} onClick={ () => handleMenuItemClick('home')}>About me</button>
           </li>
           <li>
-            <a href="#skills" className= {styles.navLink} onClick={handleMenuItemClick}>Skills</a>
+            <button className= {styles.navLink} onClick={ () => handleMenuItemClick('skills')}>Skills</button>
           </li>
           <li>
-            <a href="#projects" className= {styles.navLink} onClick={handleMenuItemClick}>Projects</a>
+            <button className= {styles.navLink} onClick={ () => handleMenuItemClick('projects')}>Projects</button>
           </li>
           <li>
-            <a href="#contact" className= {styles.navLink} onClick={handleMenuItemClick}>Contact</a>
+            <button className= {styles.navLink} onClick={ () => handleMenuItemClick('contact')}>Contact</button>
           </li>
         </ul>
         <button className={styles.themeToggle} onClick={toggleTheme}>
