@@ -1,43 +1,52 @@
-# New Portfolio
+# 🌐 Portfolio Web - Vanessa Fernández
 
-Este proyecto es una aplicación web de portafolio personal que permite a los usuarios mostrar sus habilidades, proyectos y proporcionar una manera de contactarse. La aplicación está compuesta por un frontend desarrollado en React y un backend en Node.js con Express. El backend se conecta a una base de datos alojada en Turso para almacenar y gestionar los datos de contacto.
+Este es mi portfolio personal desarrollado como una **Single Page Application (SPA)** con React. Aquí presento quién soy, mis habilidades, proyectos, experiencia y una forma de contactarme. Incluye varios proyectos desarrollados durante mi formación, incluyendo mi app final: **GymPlan**.
 
-## Tecnologías Usadas
+---
 
-### Frontend
-- **React**: Biblioteca de JavaScript para construir interfaces de usuario.
-- **React Router**: Manejo de la navegación entre diferentes componentes.
-- **Axios**: Para realizar solicitudes HTTP al backend.
-- **HTML/CSS**: Para el diseño y la estructura de la página web.
+## ✨ Características
 
-### Backend
-- **Node.js**: Entorno de ejecución para JavaScript en el servidor.
-- **Express**: Framework para construir aplicaciones web y API.
-- **Axios**: Para realizar solicitudes HTTP al backend.
-- **CORS**: Middleware para permitir solicitudes entre diferentes orígenes.
-- **MySQL**: Base de datos relacional para almacenar datos de contacto.
+- ✅ Diseño responsive adaptable a móviles, tablets y escritorio.
+- 🌙 Cambio de tema claro/oscuro (modo light/dark) con `Context API`.
+- 🔁 Navegación suave entre secciones mediante scroll interno.
+- 💼 Sección de proyectos destacados con acceso a más proyectos.
+- 📄 Descarga de CV en formato visual y actualizado.
+- 📬 Formulario de contacto con validaciones y mensajes de éxito/error.
+- 📂 Estructura modular para facilitar escalabilidad.
 
-## Descripción del Proyecto
+---
 
-### Frontend
+## 🛠 Tecnologías utilizadas
 
-El frontend está desarrollado con React, utilizando componentes funcionales y hooks. La aplicación es de una sola página (SPA) y permite navegar entre diferentes secciones como Home, Projects, Skills y Contact. También incluye un tema oscuro/ligero que se puede alternar mediante un botón.
+- **React** (con Vite)
+- **JavaScript (ES6+)**
+- **HTML5 + CSS3**
+- **React Router DOM**
+- **Context API** (para gestionar el tema claro/oscuro)
+- **Vercel** (despliegue)
+- **Git & GitHub** (control de versiones)
 
-### Backend
+---
 
-El backend está construido con Node.js y Express. Proporciona una API RESTful para gestionar los datos de contacto. Incluye las siguientes funcionalidades:
+## 📁 Estructura del proyecto
 
-- Obtener todos los contactos.
-- Obtener un contacto por ID.
-- Crear un nuevo contacto.
-- Actualizar un contacto existente.
-- Eliminar un contacto por ID.
+- `src/`
+  - `assets/` → Imágenes, íconos y archivos como el CV
+  - `common/` → Componentes reutilizables (Header, Footer, ThemeContext, etc.)
+  - `sections/`
+    - `Home/`
+    - `Skills/`
+    - `Projects/` → Incluye AllProjects, ProjectCard, ProjectData
+    - `Contact/`
+  - `routers/` → Configuración de React Router
+  - `App.jsx` → Componente raíz con estructura general
+  - `main.jsx` → Punto de entrada
+  - `index.css` → Estilos globales
 
-### Base de Datos
+  ---
 
-La base de datos utilizada es MySQL, donde se almacenan los datos de contacto. La conexión a la base de datos está configurada utilizando la biblioteca `mysql2`.
+## 🚀 Despliegue
+- **Vercel** https://vanessa-fernandez-portfolio.vercel.app/
 
-### Despliegue
 
-El proyecto está desplegado tanto el backend como el frontend en Vercel.
 

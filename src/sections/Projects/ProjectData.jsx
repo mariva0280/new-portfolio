@@ -45,7 +45,7 @@ const projectData = [
   {
     id: 5,
     title: 'Juego',
-    shortDescription: 'App juego (en construcción)',
+    shortDescription: 'App juego arkanoid',
     summary: 'Un juego cláciso tuneado, es un arkanoid con estilo propio, implementado puramente en Javascript, un reto todo el proyecto.',
     image: game,
     githubLink: 'https://github.com/mariva0280/juegoArkanoid',
