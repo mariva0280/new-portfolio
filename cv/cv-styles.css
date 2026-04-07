@@ -82,7 +82,7 @@ body {
 
 .left-column section,
 .right-column section {
-    margin-bottom: 10px; /* Aumentar el margen inferior de las secciones */
+    margin-bottom: 8px; /* Aumentar el margen inferior de las secciones */
 }
 
 .left-column section ul,
@@ -97,7 +97,7 @@ body {
     border-bottom: 2px solid #c1c1c1;
     padding-bottom: 5px;
     margin-bottom: 5px;
-    font-size: 14px;
+    font-size: 13.5px;
 }
 
 .left-column section ul li,
